@@ -1,7 +1,7 @@
 {
   "name": "wtf-snipe-x-bot",
   "version": "1.0.0",
-  "description": "Hey Chad - Solana Trading Bot",
+  "description": "Hey Chad - Solana Trading bot",
   "main": "snipe.js",
   "type": "module",
   "scripts": {
