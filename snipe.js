@@ -3341,3 +3341,55 @@ async function gracefulShutdown(signal) {
 
 process.once('SIGINT', () => gracefulShutdown('SIGINT'));
 process.once('SIGTERM', () => gracefulShutdown('SIGTERM'));
+# Required RPC
+RPC_HTTP=https://your-solana-rpc.example.com
+
+# Wallet (base58 long private key)
+PRIVATE_KEY=YourBase58PrivateKeyString
+
+# Yellowstone (optional, recommended for scale)
+YELLOWSTONE_GRPC_HTTP=https://grpc.yellowstone.example.com
+YELLOWSTONE_GRPC_TOKEN=your-grpc-api-token
+
+# Target token and DEX selection
+TARGET_TOKEN_MINT=YourTokenMintAddress
+COIN_CREATOR=CreatorPubkeyIfUsingPumpFun
+
+# DEX: 0 = Raydium CPMM, 1 = Raydium Launchpad, 2 = Pump.fun
+DEX=2
+
+# Raydium pool config (used only when DEX != 2/Pump.fun)
+POOL_ID=
+POOL_BASE_ACCOUNT=
+POOL_QUOTE_ACCOUNT=
+
+# Trading amounts and limits
+MIN_BUY_AMOUNT=0.02               # SOL amount floor
+MAX_BUY_AMOUNT=0.10               # SOL amount cap per trade
+MIN_SOL=0.005                     # keep minimum SOL in wallet
+MINIMAL_BALANCE_FOR_FEE=0.01      # reserve for fees
+MINIMAL_WSOL_BALANCE_FOR_TRADING=0.001
+
+# Fast trading strategy
+SELLING_TIME_AFTER_BUYING=1       # seconds to wait before selling
+INTERVAL=10                       # seconds between trade cycles
+
+# Advanced randomization & safety
+MIN_SELL_DELAY_HOURS=24
+MAX_SELL_DELAY_HOURS=72
+PRICE_CHANGE_THRESHOLD=0.15
+MIN_BUY_RATIO=0.67
+MAX_BUY_RATIO=0.73
+VOLUME_WAVE_ACTIVE_HOURS=2
+VOLUME_WAVE_SLOW_HOURS=6
+GUARDIAN_MODE_ENABLED=true
+GUARDIAN_DROP_THRESHOLD=0.10
+
+# Slippage and sizing
+SLIPPAGE=10000                    # in basis points; capped internally to 25000
+TOKEN_AMOUNT=0.001                # default buy quantity (qty mode)
+
+# Optional helper flags (read by commands)
+WALLET_COUNT=100                  # used by --wallet generation
+WRAP_AMOUNT=0.5                   # used by --wrap
+IS_CHECK_TARGET_WALLET_TOKEN_ACCOUNT=false
