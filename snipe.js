@@ -852,7 +852,7 @@ async function showMainMenu(ctx, edit = false) {
     : '⚠️ No wallet connected';
   
   const message = `
-🚀 *Hey Welcome to Sol Trading Bot- New* 🤖
+🚀 *Hey Welcome to fomo trading bot- New* 🤖
 
 
 I’m the one-stop solution for all your trading needs!
@@ -865,9 +865,7 @@ I’m the one-stop solution for all your trading needs!
 
 ⚡ Looking for a quick buy or sell? Simply paste the token CA and you're ready to go!🏃 
 ━━━━━━━━━━━━━━━━━━
-${walletInfo}
 
-🏦 *CASH & STABLE COIN BANK*
 _Paste any Solana contract address to analyze_
   `;
   
